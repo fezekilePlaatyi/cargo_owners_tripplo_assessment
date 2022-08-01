@@ -1,0 +1,256 @@
+@import '../../../node_modules/bootstrap/scss/bootstrap';
+
+// $fa-font-path: '../../../node_modules/@fortawesome/fontawesome-free/webfonts';
+
+@import '../../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss';
+@import '../../../node_modules/@fortawesome/fontawesome-free/scss/v4-shims.scss';
+@import '../../../node_modules/@fortawesome/fontawesome-free/scss/brands.scss';
+@import '../../../node_modules/@fortawesome/fontawesome-free/scss/regular.scss';
+@import '../../../node_modules/@fortawesome/fontawesome-free/scss/solid.scss';
+
+$primary-color: #0458f6;
+$secondary-color: #FFA500;
+$text-color: #f2f2f2;
+$white-color: #ffffff;
+$transition: all 0.65s ease-in-out;
+
+body {
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+a {
+    text-decoration: none;
+    outline: 0;
+}
+
+button {
+    outline: none !important;
+}
+
+input,
+textarea {
+    border: 0;
+    border-radius: 10px;
+    width: 100%;
+    margin-bottom: 0.5em;
+    padding: 0.75em;
+    font-size: 16px;
+    outline: none;
+    font-weight: 400;
+    border: 1px solid #b3b3b3;
+
+    &:focus {
+        box-shadow: none;
+    }
+}
+
+textarea {
+    resize: none;
+    min-height: 150px;
+}
+
+%btn-style {
+    border: 1px solid transparent;
+    background-color: transparent;
+    border-radius: 40px !important;
+    padding: 0.6em 3em;
+    font-size: 14px;
+    color: $text-color;
+    text-transform: capitalize;
+    font-weight: 400;
+    transition: $transition;
+    display: inline-block;
+
+    &:hover {
+        transform: scale(0.98) !important;
+        transition: $transition;
+        color: $text-color;
+    }
+}
+
+.main-btn {
+    @extend %btn-style;
+    background-color: $secondary-color;
+}
+
+.paths-container {
+    position: absolute;
+    bottom: 0;
+    left: -140px;
+    bottom: -110px;
+    
+
+    .path1 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        content: "";
+        border: 40px solid rgba(255,255,255,0.4);
+        height: 300px;
+        width: 300px;
+        border-radius: 150px;
+    }
+
+    .path2 {
+        display: block;
+        content: "";
+        height: 150px;
+        width: 150px;
+        border-radius: 75px;
+        background-color: rgba(255,255,255,0.4);
+
+    }
+}
+
+#navigation_bar {
+    background-color: rgba(255,255,255,0.7);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    transition: $transition;
+    padding: 0.75em 3em;
+
+    .nav-dropdown-menu {
+        margin-left: -200px !important;
+    }
+
+    img {
+        width: 150px;
+    }
+}
+
+#login_page {
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 65vw 35vw;
+    grid-template-rows: auto;
+
+    .left-side {
+        height: 100vh;
+        background-color: $primary-color;
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        align-items: center;
+        padding: 1em 6em;
+        position: relative;
+
+        img {
+            margin-bottom: 1.5em;
+            width: 180px;
+        }
+
+        h4 {
+            color: $text-color;
+            margin-bottom: 0.5em;
+            font-size: 25px;
+            font-weight: 400;
+        }
+    }
+
+    .form-side {
+        display: grid;
+        grid-template-columns: auto;
+        align-items: center;
+        padding: 3em;
+
+        .error-message {
+            color: red
+        }
+
+        .header-part {
+            margin-bottom: 3em;
+
+            h2 {
+                font-size: 30px;
+                font-weight: 700;
+            }
+
+            h3 {
+                font-weight: 400;
+            }
+        }
+
+        .main-btn {
+            background-color: $primary-color !important;
+            margin-top: 1em;
+        }
+    }
+}
+
+#home_page {
+    
+    .loader {
+        color: $primary-color;
+    }
+
+    .content {
+        padding: 3em 10em;
+        height: 77vh;
+        overflow-y: scroll;
+
+        .page-header {
+            display: grid;
+            grid-template-columns: auto auto;
+            column-gap: 2em;
+            margin-bottom: 2em;
+            padding: 0 3em;
+
+            button {
+                padding: 1em;
+                border: 0;
+                background-color: transparent;
+                font-weight: 600;
+                font-size: 20px;
+                transition: $transition;
+                border-radius: 10px;
+
+                &.active-btn {
+                    background-color: rgba(4, 88, 246, 0.09);
+                    transition: $transition;
+                    color: $primary-color;
+                    border-bottom: 3px solid $primary-color;
+                }
+            }
+        }
+
+        .MuiTableHead-root {
+            background-color: $primary-color;
+            th {
+                color: $white-color;
+            }
+        }
+
+        .MuiTablePagination-root {
+            p {
+                margin: 0 !important;
+            }
+        }
+    }
+
+    .top-right {
+        position: absolute;
+        bottom: 70px;
+        right: 35px;
+    }
+}
+
+.main-footer {
+    padding: 0 6em;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
+    .content-part {
+        color: $primary-color;
+        text-align: center;
+        border-top: 1px solid #f2f2f2;
+        padding: 1em 2em;
+        p {
+            padding: 0;
+            margin: 0;
+        }
+    }
+}

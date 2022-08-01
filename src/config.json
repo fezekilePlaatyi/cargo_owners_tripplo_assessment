@@ -1,0 +1,5 @@
+{
+  "PORT": 8081,
+  "AUTH_API_URL": "https://p1j20vsoa0.execute-api.us-east-1.amazonaws.com/Prod/login",
+  "SECURED_API_URL": "https://rwan90ltq0.execute-api.us-east-1.amazonaws.com/Prod"
+}
