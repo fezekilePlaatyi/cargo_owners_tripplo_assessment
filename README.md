@@ -73,14 +73,8 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.\
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-## Hosting
-The client is built and deployed in the Amazon S3 bucket, so users can access it over the internet. The deployment pipeline is managed at AWS CodePipeline which with webhooks gets notified to deploy/redeploy in each change detected.
-
+## Buidling and Hosting
+The deployment pipeline is managed at AWS CodePipeline, with Webhooks that the pipelines subscribe for changes in the repository, then when new changes are detected, the `buildspec.yml` file in root directory of this project kicks the build. The client is then deployed in the Amazon S3 bucket, so users can access it over the internet.
 
 In the project directory, you can run:
 
